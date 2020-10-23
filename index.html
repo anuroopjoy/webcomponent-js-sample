@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="#" />
+        <script src="index.js"></script>
+        <style>
+            div {
+                color: red;
+            }
+            .center {
+                text-align: center;
+                font-size: 5em;
+            }
+        </style>
+    </head>
+    <body>
+        <template id="my-template">
+            <style>
+                div {
+                    color: blue;
+                }
+                .center {
+                    text-align: center;
+                    font-size: 2em;
+                }
+            </style>
+            <div class="center">Name: <slot name="name"><label>Netflix</label></slot></div>
+            <div class="center">Price: <slot name="price"><label>1000</label></slot></div>
+        </template>
+        <div class="center">Outer Div</div>
+        <div class="center">Another Outer Div</div>
+        <!-- <div class="center"> -->
+        <my-element id="elem1" attr1="initial"></my-element>
+        <my-element id="elem1" attr1="initial">
+            <label slot="name">Prime</label>
+            <label slot="price">500</label>
+        </my-element>
+        <!-- </div> -->
+    </body>
+</html>
